@@ -45,6 +45,6 @@ export class AppComponent implements OnInit {
   }
 
   covertTime(value) {
-    return moment(Date(value)).format('LLLL');
+    return moment(new Date(value).toUTCString()).format('LLLL');
   }
 }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FetchService {
-  readonly BASEURL = `http://localhost:5000/api`
+  readonly BASEURL = `api`
   constructor(private http: HttpClient) { }
 
   getWeatherServ(city): Observable<any> {
