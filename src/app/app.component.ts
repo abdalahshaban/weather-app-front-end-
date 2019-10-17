@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   getWeather() {
     console.log(this.SearchForm.value.cityName);
     this.errorMessage = null
-    this.weatherData = null
+    this.weatherData = false
     this.showSpinner = true
     this.fetchServ.getWeatherServ(this.SearchForm.value.cityName).subscribe(data => {
       this.showSpinner = false
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     })
   }
 
-  covertTime(value) {
-    return moment(new Date(value).toUTCString()).format('LLLL');
+  covertTime(value: Date) {
+    return moment(value).format('LLLL');
   }
 }
