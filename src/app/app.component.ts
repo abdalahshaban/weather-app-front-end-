@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
   getWeather() {
     console.log(this.SearchForm.value.cityName);
     this.errorMessage = null
+    this.weatherData = null
     this.showSpinner = true
     this.fetchServ.getWeatherServ(this.SearchForm.value.cityName).subscribe(data => {
       this.showSpinner = false
